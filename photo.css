@@ -1,0 +1,87 @@
+.body{
+    background-color: lightblue;
+    color: black;
+}
+
+.total_grid{
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+}
+
+
+@media (max-width: 750px) {
+    .total_grid{
+    grid-template-columns: 1fr ;
+}
+    
+}
+
+@media (max-width: 751px) and (min-width: 999px){
+    .total_grid{
+    grid-template-columns: 1fr 1fr;
+}
+}
+
+@media (min-width: 1000px) {
+    .total_grid{
+    grid-template-columns: 1fr 1fr 1fr ;
+}
+}
+
+.big{
+    width:  100%;
+    height: auto;
+    margin-bottom: 50px;
+    background-color: lightblue;
+    border-radius: 10px;
+}
+
+.division1{
+    display: grid;
+    width: 300px;
+    padding-left: 100px;
+}
+
+.headline{
+    font-size: 40px;
+    font-weight: bold;
+    font-family: Arial, Helvetica, sans-serif;
+    background-color: lightblue;
+    display: flex;
+    align-items: center;
+    padding-right: 600px;
+}
+
+.header{
+    display: flex;
+    flex-direction: row;
+}
+
+.search_box{
+    width: 180px;
+    display: flex;
+    flex-shrink: 0;
+    align-items: center;
+    justify-content: space-between;
+    padding-left: 10px;
+}
+
+.searchbox{
+    height: 50px;
+    width: 300px;
+    text-align: center;
+}
+
+.photo{
+    border-radius: 10px;
+    width: 300px;
+}
+
+.table{
+    border-style: solid;
+    border-color: white;
+}
+
+.camtable{
+    text-align: center;
+}
