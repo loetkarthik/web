@@ -1,0 +1,120 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  background-color: #3e3e50;
+  color: white;
+  padding-top: 10px;
+  padding-right: 30px;
+}
+
+
+.logo img {
+  height: 50px;
+  width: 50px;
+  border-radius: 50%;
+}
+
+.site-title {
+  font-size: 20px;
+  flex: 1;
+  text-align: center;
+}
+
+.nav {
+  display: flex;
+  gap: 20px;
+}
+
+.text{
+  color: white;
+  text-decoration: none;
+  font-size: 16px;
+  transition: color 0.3s;
+}
+
+.text:hover {
+  color: red;
+}
+
+.main{
+  display: flex;
+  flex-direction: row;
+  min-height: calc(100vh - 70px);    /* This line means 70px of header size and 100vh reaming screen size of visual height screen...*/
+}
+
+.left-side {
+  flex: 1;
+  background-color: #ffdc5d;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.bg-img {
+    height: 540px;
+    width: 400px;
+    position: absolute;
+    border-radius: 50px;
+}
+
+.left_text{
+    position: relative;
+    margin-top: 700px;
+    font-size: 24px;
+}
+
+.form-container {
+  flex: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background-color: #E6F2FF;
+}
+
+
+form {
+  background-color: rgba(95, 94, 117, 0.8);
+  padding: 30px;
+  border-radius: 12px;
+  width: 320px;
+  box-shadow: 0 0 15px rgba(0, 0, 0, 0.2);
+}
+
+form label {
+  display: block;
+  color: black;
+  margin-top: 15px;
+  font-size: 20px;
+}
+
+.input_box{
+  width: 100%;
+  padding: 8px 10px;
+  margin-top: 5px;
+  border: none;
+  border-radius: 6px;
+}
+
+.submit-btn {
+  margin-top: 20px;
+  width: 100%;
+  padding: 10px;
+  background-color: #E6F2FF;
+  color: black;
+  border: none;
+  border-radius: 6px;
+  font-weight: bold;
+  cursor: pointer;
+}
+
+.submit-btn:hover {
+  background-color: yellowgreen;
+}
