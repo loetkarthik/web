@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Budget Calculator</title>
+  <script src="jquery-3.7.1.min.js"></script>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background-color: #f1f3f6;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      min-height: 100vh;
+    }
+    .container {
+      background: #fff;
+      padding: 30px;
+      border-radius: 12px;
+      box-shadow: 0px 4px 10px rgba(0,0,0,0.2);
+      text-align: center;
+      width: 500px;
+    }
+    h2 {
+      color: #3448c5;
+    }
+    input {
+      padding: 8px;
+      margin: 8px;
+      width: 100px;
+      border: 1px solid #ccc;
+      border-radius: 6px;
+    }
+    .btn {
+      background: #3448c5;
+      color: white;
+      padding: 10px 20px;
+      border: none;
+      border-radius: 8px;
+      cursor: pointer;
+      margin-top: 15px;
+    }
+    .btn:hover {
+      background: #26358f;
+    }
+    .result {
+      margin-top: 20px;
+      display: flex;
+      justify-content: space-between;
+    }
+    .box {
+      padding: 15px;
+      border-radius: 10px;
+      width: 100px;
+      text-align: center;
+      font-weight: bold;
+    }
+    .rent { color: red; }
+    .accessories { color: green; }
+    .emergency { color: orange; }
+    .saving { color: blue; }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h2>Budget Calculator App</h2>
+    <p><b>Enter Amount to Manage</b></p>
+    <input type="number" id="amount" placeholder="Enter Amount"><br>
+
+    <p><b>How would you like to divide your money?</b></p>
+    <input type="number" id="rent" placeholder="Room Rent(%)">
+    <input type="number" id="accessories" placeholder="Accessories(%)">
+    <input type="number" id="emergency" placeholder="Emergency(%)">
+    <input type="number" id="saving" placeholder="Saving(%)"><br>
+
+    <button class="btn" id="evaluate">Evaluate My Money</button>
+
+    <div class="result">
+      <div class="box rent">Room Rent<br><span id="rentVal">Rs.0.00</span></div>
+      <div class="box accessories">Accessories<br><span id="accessoriesVal">Rs.0.00</span></div>
+      <div class="box emergency">Emergency<br><span id="emergencyVal">Rs.0.00</span></div>
+      <div class="box saving">Saving<br><span id="savingVal">Rs.0.00</span></div>
+    </div>
+  </div>
+
+  <script>
+    $(document).ready(function(){
+      $("#evaluate").click(function(){
+        let amount = parseFloat($("#amount").val());
+        let rent = parseFloat($("#rent").val());
+        let accessories = parseFloat($("#accessories").val());
+        let emergency = parseFloat($("#emergency").val());
+        let saving = parseFloat($("#saving").val());
+
+        if(isNaN(amount) || isNaN(rent) || isNaN(accessories) || isNaN(emergency) || isNaN(saving)){
+          alert("Please enter all values!");
+          return;
+        }
+
+        let totalPercent = rent + accessories + emergency + saving;
+        if(totalPercent !== 100){
+          alert("The total percentage must be 100!");
+          return;
+        }
+
+        let rentVal = (amount * rent) / 100;
+        let accVal = (amount * accessories) / 100;
+        let emeVal = (amount * emergency) / 100;
+        let saveVal = (amount * saving) / 100;
+
+        $("#rentVal").text("Rs." + rentVal.toFixed(2));
+        $("#accessoriesVal").text("Rs." + accVal.toFixed(2));
+        $("#emergencyVal").text("Rs." + emeVal.toFixed(2));
+        $("#savingVal").text("Rs." + saveVal.toFixed(2));
+      });
+    });
+  </script>
+</body>
+</html>
